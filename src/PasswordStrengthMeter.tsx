@@ -36,6 +36,7 @@ export default function PasswordStrengthMeter() {
         value={password}
         onChange={(event) => setPassword(event.target.value)}
         autoComplete="new-password"
+        aria-describedby="password-strength"
       />
 
       <progress
@@ -44,7 +45,9 @@ export default function PasswordStrengthMeter() {
         aria-label="Password strength"
       />
 
-      <p>{label}</p>
+      <p id="password-strength" aria-live="polite">
+  {label}
+</p>
     </section>
   );
 }
